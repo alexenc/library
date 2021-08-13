@@ -1,10 +1,12 @@
 import axios from "axios"
 import { useState } from "react"
 import { useHistory } from "react-router-dom"
+import Error from "./Error"
 
 
 
 function AddNewBook() {
+    const [error, setError] = useState(false)
     const [data, setData] = useState({
         tittle: '',
         author: '',
@@ -18,6 +20,11 @@ function AddNewBook() {
         e.preventDefault()   
 
             const {title, author, pages, total_amount, isbn} = data
+            
+            //form validation
+            if(title === '' || author === '' || pages < 1 || total_amount < 0 || isbn === ''){
+                return setError(true)
+            }
             axios.post('https://5c6eb0534fa1c9001424240b.mockapi.io/api/v1/books', {title, author, pages, total_amount, isbn})
                 .then(() => {
                     history.push('/');
@@ -40,6 +47,7 @@ function AddNewBook() {
     return (
         <div className="create">
             <h2>Add a new Book</h2>
+            {error ? <Error mesage={'all fields required and only numbers bigger than 0'}/> : null}
             <form onSubmit={handleSubmit}>
                 <label>Book title:</label>
                 <input 

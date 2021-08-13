@@ -92,7 +92,7 @@ code {
 
 /* Add a new book*/
 .create {
-  max-width: 600px;
+  max-width: 65%;
   margin: 0 auto;
   text-align: center;
 }
@@ -102,8 +102,9 @@ code {
 }
 .create h2 {
   font-size: 20px;
-  color: #f1356d;
+  color: #eb926f;
   margin-bottom: 30px;
+  margin-top: 20px;
 }
 .create input,
 .create textarea,
