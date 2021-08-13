@@ -176,6 +176,7 @@ p {
 .back-p {
   margin-bottom: 2rem;
   margin-top: 15px;
+  cursor: pointer;
 }
 
 span {
