@@ -33,6 +33,7 @@ code {
 }
 .navbar .links {
   margin-left: auto;
+  text-align: right;
 }
 .navbar a {
   margin-left: 16px;
@@ -130,10 +131,11 @@ code {
   cursor: pointer;
   font-size: 14px;
   width: 125px;
+  margin-bottom: 10px;
 }
 
 .book-img {
-  width: 100px;
+  width: 85px;
 }
 
 .book-info h2 {
@@ -169,4 +171,29 @@ p {
 
 .book-info a {
   text-decoration: none;
+}
+
+.back-p {
+  margin-bottom: 2rem;
+  margin-top: 15px;
+}
+
+span {
+  color: black;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .create {
+    max-width: 70%;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
+.delete-btn {
+  background-color: red;
 }

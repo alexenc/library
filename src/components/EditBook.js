@@ -59,7 +59,7 @@ function EditBook({toogle, book}) {
     return (        
 
         <div className="create">            
-            <button onClick={toogle} className="back-btn">⬅️ go back</button>
+           <p className="back-p"> <a onClick={toogle} className="back-btn">⬅️ go back</a></p>
             <form onSubmit={updateInfo}>
                 {error ? <Error mesage={'all fields required or invalid numbers'}/> : null}
                 <label>Title:</label>
@@ -74,7 +74,7 @@ function EditBook({toogle, book}) {
                 <input onChange={e => onChangeHandler(e)} name={'isbn'} type="text" value={newInfo.isbn}/>
                 <button type="submit">Change</button>
             </form>
-            <button onClick={deleteBook}>delete book</button>
+            <button onClick={deleteBook} className="delete-btn">🗑️ delete book</button>
         </div>
     )
 }

@@ -45,16 +45,16 @@ function Book() {
     return (
         <div>
         
-            {isLoading && <h3>loading...</h3>  }          
+            {isLoading && <h3 className="loading">loading...</h3>  }          
             {toogle ? <EditBook toogle={tf} book={book}/> :
             <div className="book-area ">                
                 <div className="book-info">     
-                <p><Link to="/">⬅️ go back</Link></p>      
+                <p className="back-p"><Link to="/">⬅️ go back</Link></p>      
                 <h2>📗  {book.title}</h2>
-                <p>🧔 Author: {book.author}</p>
-                <p>📃 pages: {book.pages}</p>
-                <p>📚 total amount: {book.total_amount}</p>
-                <p>📇 isbn: {book.isbn}</p>
+                <p>🧔 Author: <span>{book.author}</span></p>
+                <p>📃 pages: <span>{book.pages}</span></p>
+                <p>📚 total amount: <span>{book.total_amount}</span></p>
+                <p>📇 isbn: <span>{book.isbn}</span></p>
                 <button onClick={tf}>Edit</button>
             </div>
             </div>}
