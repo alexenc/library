@@ -31,7 +31,7 @@ function Book() {
           apiCall()
           
 
-    }, [])
+    }, [id])
 
     const tf = () =>  {
         if(toogle){
