@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import {  useParams } from "react-router-dom"
+import {  Link, useParams } from "react-router-dom"
 import EditBook from "./EditBook"
 
 
@@ -47,10 +47,14 @@ function Book() {
         
             {isLoading && <h3>loading...</h3>  }          
             {toogle ? <EditBook toogle={tf} book={book}/> :
-            <div className="book-area ">
-                <div className="book-info">            
-                <h2> Title :{book.title}</h2>
-                <p>Author: {book.author}</p>
+            <div className="book-area ">                
+                <div className="book-info">     
+                <p><Link to="/">⬅️ go back</Link></p>      
+                <h2>📗  {book.title}</h2>
+                <p>🧔 Author: {book.author}</p>
+                <p>📃 pages: {book.pages}</p>
+                <p>📚 total amount: {book.total_amount}</p>
+                <p>📇 isbn: {book.isbn}</p>
                 <button onClick={tf}>Edit</button>
             </div>
             </div>}

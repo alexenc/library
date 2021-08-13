@@ -59,11 +59,11 @@ function EditBook({toogle, book}) {
     return (        
 
         <div className="create">            
-            <button onClick={toogle}>go back</button>
+            <button onClick={toogle} className="back-btn">⬅️ go back</button>
             <form onSubmit={updateInfo}>
                 {error ? <Error mesage={'all fields required or invalid numbers'}/> : null}
                 <label>Title:</label>
-                <input onChange={e => onChangeHandler(e)} name={'title'} type="text"  placeholder={newInfo.title}/>
+                <input onChange={e => onChangeHandler(e)} name={'title'} type="text"  value={newInfo.title}/>
                 <label>Author</label>
                 <input onChange={e => onChangeHandler(e)} name={'author'}  type="text" value={newInfo.author}/>
                 <label>Pages:</label>

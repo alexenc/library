@@ -52,7 +52,7 @@ code {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  width: 55%;
+  width: 65%;
 }
 
 .card {
@@ -61,6 +61,7 @@ code {
   border: rgb(170, 169, 169) 1px solid;
   border-radius: 5px;
   padding: 2rem;
+  width: 250px;
 }
 
 .card p {
@@ -92,7 +93,7 @@ code {
 
 /* Add a new book*/
 .create {
-  max-width: 65%;
+  max-width: 35%;
   margin: 0 auto;
   text-align: center;
 }
@@ -101,7 +102,7 @@ code {
   display: block;
 }
 .create h2 {
-  font-size: 20px;
+  font-size: 25px;
   color: #eb926f;
   margin-bottom: 30px;
   margin-top: 20px;
@@ -115,8 +116,31 @@ code {
   border: 1px solid #ddd;
   box-sizing: border-box;
   display: block;
+  height: 50px;
+  font-size: 15px;
+  border-radius: 5px;
 }
 .create button {
+  background: #eb926f;
+  margin-top: 10px;
+  color: #fff;
+  border: 0;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 125px;
+}
+
+.book-img {
+  width: 100px;
+}
+
+.book-info h2 {
+  color: #eb926f;
+}
+
+.book-info button {
   background: #eb926f;
   margin-top: 10px;
   color: #fff;
@@ -124,8 +148,25 @@ code {
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  width: 90px;
 }
 
-.book-img {
-  width: 100px;
+.book-info h2,
+p {
+  margin: 10px;
+}
+
+.back-btn {
+  right: 42%;
+  position: relative;
+  margin: 2.5rem;
+  background-color: none;
+}
+
+.card a {
+  text-decoration: none;
+}
+
+.book-info a {
+  text-decoration: none;
 }

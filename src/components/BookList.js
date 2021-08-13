@@ -27,7 +27,7 @@ function BookList() {
     return (
         <div>
             <div className="title">
-                <h2 className="h2">All Books</h2> 
+                <h2 className="h2">📚 All Books</h2> 
             </div> 
             <div className="main-container">                     
                 <div className="book-container">
