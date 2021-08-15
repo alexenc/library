@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom"
 import Error from "./Error"
 
 
-
 function AddNewBook() {
     const [error, setError] = useState(false)
     const [data, setData] = useState({

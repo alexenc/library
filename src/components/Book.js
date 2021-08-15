@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import {  Link, useParams } from "react-router-dom"
+import useGet from "../hooks/useGet"
 import EditBook from "./EditBook"
 
 
@@ -8,35 +9,15 @@ import EditBook from "./EditBook"
 
 
 function Book() {
-
+    
     const {id} = useParams()
-    const [isLoading, setIsLoading] = useState(false)
-    const [book, setBook] = useState([])
+    const {data: book, isLoading} = useGet(`https://5c6eb0534fa1c9001424240b.mockapi.io/api/v1/books/${id}`)
     const [toogle, setToogle] = useState(false)
 
-    useEffect(() => {
-        
-        
-        const apiCall = async () => {               
-      
-            //api call
-            const url = 'https://5c6eb0534fa1c9001424240b.mockapi.io/api/v1/books/' + id
-            setIsLoading(true)
-            const result = await axios.get(url)
-            setIsLoading(false)
-            setBook(result.data)
-            
-            
-          }
-          apiCall()
-          
+    
 
-    }, [id])
-
-    const tf = () =>  {
-        if(toogle){
-            setToogle(false)
-        } else {setToogle(true)}
+    const toogleFunc = () =>  {
+        setToogle(prev => !prev)
     }
     
     
@@ -46,7 +27,7 @@ function Book() {
         <div>
         
             {isLoading && <h3 className="loading">loading...</h3>  }          
-            {toogle ? <EditBook toogle={tf} book={book}/> :
+            {toogle ? <EditBook toogle={toogleFunc} book={book}/> :
             <div className="book-area ">                
                 <div className="book-info">     
                 <p className="back-p"><Link to="/">⬅️ go back</Link></p>      
@@ -55,7 +36,7 @@ function Book() {
                 <p>📃 pages: <span>{book.pages}</span></p>
                 <p>📚 total amount: <span>{book.total_amount}</span></p>
                 <p>📇 isbn: <span>{book.isbn}</span></p>
-                <button onClick={tf}>Edit</button>
+                <button onClick={toogleFunc}>Edit</button>
             </div>
             </div>}
             

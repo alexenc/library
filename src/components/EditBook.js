@@ -52,14 +52,13 @@ function EditBook({toogle, book}) {
                 .then(() => {
                     history.push('/');
                 })
-                .catch((error) => console.log(error));
-                setError(false)
+                .catch((error) => console.log(error));                
     }
 
     return (        
 
         <div className="create">            
-           <p className="back-p"> <a onClick={toogle} className="back-btn">⬅️ go back</a></p>
+           <p className="back-p"> <a onClick={toogle}  className="back-btn">⬅️ go back</a></p>
             <form onSubmit={updateInfo}>
                 {error ? <Error mesage={'all fields required or invalid numbers'}/> : null}
                 <label>Title:</label>

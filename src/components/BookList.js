@@ -1,28 +1,12 @@
 import { useEffect, useState } from "react"
 import BookCard from "./BookCard"
 import axios from "axios"
+import useGet from "../hooks/useGet"
 
 function BookList() {
 
-    const [data, setData] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
-    
-
-    useEffect(() => {
-        
-        
-        const apiCall = async () => {               
-      
-            //api call
-            const url = 'https://5c6eb0534fa1c9001424240b.mockapi.io/api/v1/books'
-            setIsLoading(true)
-            const result = await axios.get(url)
-            setIsLoading(false)
-            setData(result.data)
-          }
-          apiCall()
-
-    }, [])
+   const { data, isLoading } = useGet('https://5c6eb0534fa1c9001424240b.mockapi.io/api/v1/books')
+    console.log(isLoading)
 
     return (
         <div>
